@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+// Задача компиляции кастомных чеков
+jar {
+    // Путь к папке, где хранится jar'ник с чеками
+    destinationDir rootProject.file('config/checkstyle')
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // Библиотека, на основе которой пишутся чеки
+    compile 'com.puppycrawl.tools:checkstyle:8.1'
+}
+
+
